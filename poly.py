@@ -27,7 +27,7 @@ faire_parler_animal(mon_chat)
 # 2. Polymorphisme mais sans héritage
 
 ## Si ça marche comme un canard et ça cancane comme un canard, alors ça doit être un canard (duck typing)
-## Pas besoin de spécifier le type d'objet
+## Pas besoin de spécifier le type d'objet, nos objets ont la méthode voler
 ## Méthodes communes
 ## Fonction polymorphique
 ## faire_voler essaye d'appeler la méthode voler

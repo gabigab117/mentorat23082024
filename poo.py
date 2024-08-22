@@ -1,5 +1,6 @@
 class Voiture:
     nombre_de_voitures = 0  # Attribut de classe, partage par toutes les instances
+    attribut_classe = "Attribut classe"
 
     def __init__(self, marque, modele, annee):  # Constructeur de classe
         self.marque = marque  # Attribut d'instance
@@ -35,6 +36,9 @@ class Voiture:
     def voiture_actuelle(cls): # Création d'une instance avec voiture récente
         return cls("Renault", "Megane", 2024)
 
+    def afficher_marque(self):
+        return self.marque
+
 
 class VoitureElectrique(Voiture):
     def __init__(self, marque, modele, annee, capacite_batterie):
@@ -52,7 +56,28 @@ class VoitureElectrique(Voiture):
 # Polymorphisme : utiliser des objets de différentes classes de manière uniforme. Même interface, comportement différent
 
 
+print("Voiture 1")
 voiture_1 = Voiture("Peugeot", "208", "2009")
-voiture_2 = eval(repr(voiture_1))
+print(voiture_1.nombre_de_voitures)
+print(voiture_1.marque)
+print(voiture_1.attribut_classe)
 
-print(voiture_2)
+
+print("\nVoiture 2")
+voiture_2 = Voiture("Renault", "MRS", "2012")
+print(voiture_2.nombre_de_voitures)
+print(voiture_2.marque)
+print(voiture_2.attribut_classe)
+voiture_2.attribut_classe = "Attribut d'instance"  # Attribut d'instance dans ce cas !
+print(voiture_2.attribut_classe)
+print(voiture_2.__class__.attribut_classe)
+
+
+print("\nSelf")
+print(voiture_1.afficher_marque())
+print(Voiture.afficher_marque(voiture_1))
+
+
+# print("\nVoiture 3")
+# voiture_3 = eval(repr(voiture_1))
+# print(voiture_3)
