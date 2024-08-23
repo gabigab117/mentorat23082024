@@ -6,7 +6,7 @@ class Voiture:
         self.marque = marque  # Attribut d'instance
         self.modele = modele
         self.annee = annee
-        self.__kilometrage = 0  # Attribut privé
+        self._kilometrage = 0  # Attribut privé
         Voiture.nombre_de_voitures += 1
 
     def __str__(self):  # Représentation lisible de l'objet sous forme de str, lorsqu'on fait print() ou str()
@@ -16,12 +16,12 @@ class Voiture:
         return f"Voiture(marque='{self.marque}', modele='{self.modele}', annee='{self.annee}')"
 
     def rouler(self, distance):
-        self.__kilometrage += distance
+        self._kilometrage += distance
         print(f"La voiture a parcouru {distance} km.")
 
     def obtenir_kilometrage(self):
         # https://www.docstring.fr/accompagnement/questions/894/
-        return self.__kilometrage
+        return self._kilometrage
 
     @staticmethod
     def convertir_miles_en_km(miles):  # Pas accès à self, peut etre appelée sur la classe. Pour certains à éviter
@@ -51,6 +51,7 @@ class VoitureElectrique(Voiture):
     def rouler(self, distance):  # Polymorphisme
         super().rouler(distance)
         print("Voiture électrique en mouvement silencieux.")
+
 
 # Hértage permet de réutiliser le code, hiérarchie
 # Polymorphisme : utiliser des objets de différentes classes de manière uniforme. Même interface, comportement différent

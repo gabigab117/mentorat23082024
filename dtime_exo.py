@@ -11,7 +11,7 @@ resultat_2 = date.strftime("")
 print(resultat_2)
 
 # 1.3 Formatez la date pour afficher : "Dimanche 14 juillet 2024, 16:30:45"
-resultat_3 = date.strftime("___")
+resultat_3 = date.strftime("")
 print(resultat_3)
 
 

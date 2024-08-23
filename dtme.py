@@ -31,9 +31,9 @@ print(f"Date : {date_heure_specifique.date()}, Heure : {date_heure_specifique.ti
 # 4. Formatage et parsing
 print("\n4. Formatage et parsing")
 format_date = "%d/%m/%Y %H:%M:%S"
-date_formatee = maintenant.strftime(format_date)
+date_formatee = maintenant.strftime("%d/%m/%Y %H:%M:%S")
 print(f"Date formatée : {date_formatee}")
-date_parsee = datetime.datetime.strptime("18/08/2024 14:30:45", format_date)
+date_parsee = datetime.datetime.strptime("18/08/2024 14:30:45", "%d/%m/%Y %H:%M:%S")
 print(f"Date parsée : {date_parsee}")
 
 # 5. Objet timedelta
